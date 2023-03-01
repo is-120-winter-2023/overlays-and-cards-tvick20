@@ -1,0 +1,264 @@
+/*****************************************************/
+/* This semester we will be using my variation of    */
+/* Josh Comeau's CSS Reset instead of normalize      */
+/* Read more at                                      */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*****************************************************/
+/* Always add your CSS below the reset CSS           */
+/*****************************************************/
+:root {
+  --dark-blue: #001542;
+  --alternate-blue: #2c3e50;
+  --lavender: #f3c2de;
+  --off-white: #e6f1ff;
+  --text-color: #202020;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+  line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* until you get a feel for overflow, I'll keep these next two commented out */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+
+/* p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+/* temp CSS for HTML only assignments */
+picture img {
+  width: 100%;
+}
+
+svg {
+  width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--text-color);
+  font-size: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark-blue);
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.4em;
+  margin-top: 1.2em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+article,
+aside {
+  margin-bottom: 5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a {
+  color: var(--teal);
+}
+
+a[href]:hover {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: white;
+  color: var(--dark-blue);
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid var(--dark-blue);
+  border-radius: 10px;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--dark-blue);
+  color: white;
+  text-decoration: none;
+}
+
+a.button {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 50rem;
+}
+
+footer {
+  background-color: var(--alternate-blue);
+  padding: 20px;
+  color: #fff;
+  clear: both;
+}
+
+footer p {
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Semi-transparent background-color */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* or gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 5em;
+  text-shadow: 3px 3px 3px rgb(0 0 0 / 60%);
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 10vw + 1rem, 5rem);
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 1rem;
+}
+.card {
+  flex: 1 1 0;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 300ms ease;
+}
+
+.card p {
+  position: absolute;
+  inset: auto 0 0;
+  line-height: 1;
+  margin: 0;
+  padding: 3rem 1rem 1rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: #fff;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+}
