@@ -2,6 +2,8 @@
 
 # Overlays and cards
 
+**Description** This is my overlays and cards website about odd animals
+
 **Objectives**: Add a text overlay to your hero image. Use a dynamic font for the `<h1>` in the overlay. Add four cards to your site. Add a hover effect to your cards.
 
 **Concepts covered**: The position property, text shadows, gradients, CSS filters, the `clamp()` function.
@@ -12,8 +14,8 @@
 
 ## Hero overlay
 
-| ⚠️ Centering vertically                                                                                                                                                                                                                                 |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ⚠️ Centering vertically                                                                                                                                                                                                                                                                                                                                                               |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Don't worry about vertically centering items well right now. Flexbox makes centering so easy, it's better to wait until we learn flexbox to vertically center elements. Use margins or padding for now. You may see an old school centering using `position: absolute; top: 50%; transform: translate(0, -50%);` &ndash; you are welcome to try it, but...flexbox...so much easier... |
 
 - Add a `<p>` with a subtitle below your `<h1>`.
@@ -27,9 +29,10 @@
 
 ![sample hero overlay](readme-assets/readme-hero-img.jpg)
 
-| 💡 Helpful resources |
-|:---|
+| 💡 Helpful resources                                                                                |
+| :-------------------------------------------------------------------------------------------------- |
 | - [Learn more about CSS filters at CSS-Tricks](https://css-tricks.com/almanac/properties/f/filter/) |
+
 | - [CSS Text Shadow Generator](https://www.cssportal.com/css3-text-shadow-generator/)
 |
 
@@ -37,8 +40,8 @@
 
 Use the `clamp()` function to dynamically size your `<h1>` font on your hero image.
 
-| 🎥 Watch my [Dynamic font sizing with CSS](https://youtu.be/0UZmXR3M82g) video [~ 8 minutes]                                                                                                                                                                                                                                                    |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 🎥 Watch my [Dynamic font sizing with CSS](https://youtu.be/0UZmXR3M82g) video [~ 8 minutes]                                                                                                                                                                               |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | This video shows how to use the `clamp()` function to set the font size of your `<h1>` so that it dynamically adjusts its font size so it readable on full screen, but not too big on tablet or mobile. I've included links to the websites referenced in the video below. |
 
 Since you want only the `<h1>` on the hero image to dynamically resize, not the `<h1>` elements on other pages, using the hero class to target it specifically.
@@ -51,8 +54,8 @@ Since you want only the `<h1>` on the hero image to dynamically resize, not the 
 
 _Don't just copy and paste the CSS above, rather figure out the best font sizes for your site and generate a clamp() function unique to your website._
 
-| 🔥 **Links to websites in the video**: Smoother font sizing with _linear interpolation_                                                                                                                                                                                                                                                                                                                                                                                                        |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔥 **Links to websites in the video**: Smoother font sizing with _linear interpolation_                                                                                                                                                                                                                                                                                                                                                                                           |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | For the math behind the linear interpolation, see CSS Trick's [Linearly Scale font-size with CSS clamp() Based on the Viewport](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/). The article did contain a tool to build the `clamp()` statement for you but it's currently broken. <br><br>Another tool to generate a `clamp()` statement is [Adrian Bece's Modern fluid typography editor](https://modern-fluid-typography.vercel.app/). |
 
 `clamp()` is not limited to fonts. You can use it to limit the maximum and minimum size on other elements as well. To learn more, read MDN's page on [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp). The page also compares `clamp()` to other useful functions such as `min()` and `max()`.
@@ -71,10 +74,9 @@ Before we start, we need to determine the maximum width needed for the images on
 
 **Find four images for your cards and resize and crop all of your images to a width of 500px.**
 
-| ⚠️ Make sure your cards all have the same aspect ratio                                                                                                                                                                                                                                    |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ⚠️ Make sure your cards all have the same aspect ratio                                                                                                                                                                                                                                        |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | To make your life easier, **crop all your images so that they have the same width and height**. Square images (1:1) are easiest to work with when you make your site responsive, but rectangular images are doable. Save your original (full-size) image files for use in a later assignment. |
-
 
 ### :warning: Dealing with the validator warning "Section lacks heading."
 
@@ -116,8 +118,8 @@ svg {
 }
 ```
 
-   In the image below, notice the overlay "gap." The overlay is a semi-transparent grey and it shows as a thin line below an image with default inline display. It's caused by the line-height that all inline elements have. It's easily fixed by setting the display to block.
-   ![overlay gap](readme-assets/gap.png)]
+In the image below, notice the overlay "gap." The overlay is a semi-transparent grey and it shows as a thin line below an image with default inline display. It's caused by the line-height that all inline elements have. It's easily fixed by setting the display to block.
+![overlay gap](readme-assets/gap.png)]
 
 - Each card has its content wrapped in an `<a>`. The `<a>` element can be empty, meaning, you don't have to add an `href` or you can use `href="#"` which links to the top of the page - if you omit an `href`, set the cursor to pointer.
 
@@ -126,17 +128,16 @@ Below is an example of markup for your cards. You are welcome to adjust it to su
 ```html
 <section class="cards">
   <a href="#" class="card">
-    <img src="" width="" height="" loading="lazy" alt="" >
+    <img src="" width="" height="" loading="lazy" alt="" />
     <p>card text</p>
   </a>
 
   ...
-
 </section>
 ```
 
-| 💡 Lazy loading images |
-|:-----------------------|
+| 💡 Lazy loading images                                                                                                                                                                                                                                                                 |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | To improve performance, add the `loading="lazy"` attribute to your `<img>` elements that are _below the fold_ or not immediately visible when the page is loaded. This will tell the browser to load the images only when they are visible in the viewport and save on page load time. |
 
 Since, by default, `<a>` elements are inline elements, you will need to set the `display` property of any `<a>` elements inside the `.cards` class to `inline-block` to make them behave like block elements. However, if you use a flexbox layout, you won't need to do this. To simplify this assignment, I recommend adding this to your CSS and not worrying about changing the `<a>` display property. We will learn more about how to use flexboxes in a future assignment.
@@ -220,7 +221,7 @@ After you've ensured that your page has validated, open your repo in Github and 
 - HTML validation
 - HTML proofer
 
-*Three new tests were added. They are marked with a* ✨ *below*
+_Three new tests were added. They are marked with a_ ✨ _below_
 
 Pretests (37):
 
@@ -270,7 +271,6 @@ Pretests (37):
   - footer has styling including `background-color`
   - main has `max-width` set
   - ✨ hero `h1` font-size set using `clamp()`
-
 
 | :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                                                          |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
